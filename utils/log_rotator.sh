@@ -38,8 +38,8 @@ if [ -x /usr/bin/gzip ]; then
 	[ -f "${STDERR_FILE}.0" ] && gzip -9 "${STDERR_FILE}.0"
 fi
 
-touch "${STDOUT_FILE}"
-touch "${STDERR_FILE}"
+#touch "${STDOUT_FILE}"
+#touch "${STDERR_FILE}"
 
 exit 0
 

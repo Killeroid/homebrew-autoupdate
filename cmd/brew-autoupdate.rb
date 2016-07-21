@@ -7,6 +7,11 @@ module Autoupdate
   plist = File.expand_path("~/Library/LaunchAgents/homebrew.mxcl.autoupdate.plist")
   brew = HOMEBREW_PREFIX/"bin/brew"
 
+  EXT_CMD_HOME_PATH = File.expand_path('../..', __FILE__)
+  SCRIPT_PATH = File.join(EXT_CMD_HOME_PATH, 'utils', 'brew_updater.sh')
+
+  EXEC_SCRIPT = "test -f #{SCRIPT_PATH} && #{SCRIPT_PATH} ;"
+
   if ARGV.empty? || ARGV.include?("--help") || ARGV.include?("-h")
     puts <<-EOS.undent
       Usage:
@@ -42,7 +47,7 @@ module Autoupdate
         <array>
             <string>/bin/sh</string>
             <string>-c</string>
-            <string>/bin/date && #{auto_args}</string>
+            <string>#{EXEC_SCRIPT} /bin/date && #{auto_args}</string>
         </array>
         <key>RunAtLoad</key>
         <true/>

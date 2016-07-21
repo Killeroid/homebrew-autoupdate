@@ -41,6 +41,6 @@ fi
 #touch "${STDOUT_FILE}"
 #touch "${STDERR_FILE}"
 
-exit 0
+#exit 0
 
 

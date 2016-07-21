@@ -8,9 +8,7 @@ module Autoupdate
   brew = HOMEBREW_PREFIX/"bin/brew"
 
   EXT_CMD_HOME_PATH = File.expand_path('../..', __FILE__)
-  SCRIPT_PATH = File.join(EXT_CMD_HOME_PATH, 'utils', 'log_rotator.sh')
-
-  EXEC_SCRIPT = "test -f #{SCRIPT_PATH} && #{SCRIPT_PATH} ;"
+  LOG_ROTATE = File.join(EXT_CMD_HOME_PATH, 'utils', 'log_rotator.sh')
 
   if ARGV.empty? || ARGV.include?("--help") || ARGV.include?("-h")
     puts <<-EOS.undent
@@ -47,7 +45,7 @@ module Autoupdate
         <array>
             <string>/bin/sh</string>
             <string>-c</string>
-            <string>#{EXEC_SCRIPT} /bin/date && #{auto_args}</string>
+            <string>#{LOG_ROTATE}; /bin/date && #{auto_args}</string>
         </array>
         <key>RunAtLoad</key>
         <true/>

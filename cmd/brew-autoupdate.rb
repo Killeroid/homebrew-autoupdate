@@ -25,7 +25,7 @@ module Autoupdate
   end
 
   if ARGV.include? "--version"
-    puts "Version 1.2.0, May 2016"
+    puts "Version 1.3.0, July 2016"
   end
 
   if ARGV.include? "--start"

@@ -34,8 +34,8 @@ if [ -f "${STDOUT_FILE}" ]; then mv -f "${STDOUT_FILE}" "${STDOUT_FILE}.0"; fi
 if [ -f "${STDERR_FILE}" ]; then mv -f "${STDERR_FILE}" "${STDERR_FILE}.0"; fi
 
 if [ -x /usr/bin/gzip ]; then 
-	[ -f "${STDOUT_FILE}.0" ] && gzip -9 "${STDOUT_FILE}"
-	[ -f "${STDERR_FILE}.0" ] && gzip -9 "${STDERR_FILE}"
+	[ -f "${STDOUT_FILE}.0" ] && gzip -9 "${STDOUT_FILE}.0"
+	[ -f "${STDERR_FILE}.0" ] && gzip -9 "${STDERR_FILE}.0"
 fi
 
 touch "${STDOUT_FILE}"

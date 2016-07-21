@@ -29,11 +29,11 @@ module Autoupdate
   end
 
   if ARGV.include? "--start"
-    auto_args = "#{brew} update"
+    auto_args = "#{brew} update -v"
     # Spacing at start of lines is deliberate. Don't undo.
     if ARGV.include? "--upgrade"
       auto_args << " && #{brew} upgrade -v"
-      auto_args << " && #{brew} cleanup" if ARGV.include? "--cleanup"
+      auto_args << " && #{brew} cleanup -v" if ARGV.include? "--cleanup"
     end
 
     file = <<-EOS.undent

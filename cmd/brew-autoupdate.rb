@@ -8,7 +8,7 @@ module Autoupdate
   brew = HOMEBREW_PREFIX/"bin/brew"
 
   EXT_CMD_HOME_PATH = File.expand_path('../..', __FILE__)
-  SCRIPT_PATH = File.join(EXT_CMD_HOME_PATH, 'utils', 'brew_updater.sh')
+  SCRIPT_PATH = File.join(EXT_CMD_HOME_PATH, 'utils', 'log_rotator.sh')
 
   EXEC_SCRIPT = "test -f #{SCRIPT_PATH} && #{SCRIPT_PATH} ;"
 

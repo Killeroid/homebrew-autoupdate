@@ -1,9 +1,8 @@
 #!/bin/bash
 
+## Rotate update logs
 
-##[ "-" == "$(launchtl list | grep 'homebrew.mxcl.autoupdate' | awk '{print $1}')" ] 
-
-HOMEBREW_PREFIX="$(brew --prefix)"
+HOMEBREW_PREFIX="$(/usr/local/bin/brew --prefix)"
 LOG_DIR="${HOMEBREW_PREFIX}/var/log"
 
 STDOUT_FILE="${LOG_DIR}/homebrew.mxcl.autoupdate.out"
@@ -42,6 +41,6 @@ fi
 touch "${STDOUT_FILE}"
 touch "${STDERR_FILE}"
 
-return 0
+exit 0
 
 
